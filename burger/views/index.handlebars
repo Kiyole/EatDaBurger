@@ -1,0 +1,53 @@
+<div class="container">
+    <p class="burger-icon">🍔</p>
+      <h1 class="mb-4">Burgers!</h1>
+
+
+   <form class="burgersBeingCreated">
+<h2>Add a Burger</h2>
+      <div class="form-group">
+        <label id="ca">Burger Name:</label>
+        <input type="text" id ="burgerName" name="name">
+      
+    <button class ="submitBtn" type="submit">Make Burger!</button>
+  </div>
+  </form>
+
+
+
+<div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                  <h4>Uneaten Burgers</h4>
+                </div>
+                  <ul>
+                    {{#each burger}}
+                      {{#unless devoured}}
+                        <p>{{name}}</p> 
+                        <button data-id= {{id}} class= "devourBtn">Devour
+                          
+                        </button>
+                      {{/unless}}
+                    {{/each}}
+                  </ul>
+            </div>
+        </div>
+
+<div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-warning text-white">
+                    <h4>Devoured Burgers</h4>
+                </div>
+                <ul>
+                  {{#each burger}}
+                    {{#if devoured}}
+                      <p>{{name}}</p>
+                    {{/if}}
+                  {{/each}}
+                </ul>
+            </div>
+        </div>
+
+</div>
+</div>
